@@ -157,8 +157,6 @@ class _BaseVAE(metaclass=ABCMeta):
         total_parameters = 0
         for var in self.trainable_variables:
             shape = var.get_shape()
-            if len(shape) > 2:
-                shape = shape[1:]
             variable_parameters = 1
             for dim in shape:
                 variable_parameters *= dim.value
